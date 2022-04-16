@@ -5,7 +5,7 @@ export function useCalculateDistance(
   longtidueOne: number,
   latitudeTwo: number,
   longitudeTwo: number
-) {
+): number {
   const R = 6371; // Radius of the earth in km
   const dLat = deg2rad(latitudeTwo - latitudeOne); // deg2rad below
   const dLon = deg2rad(longitudeTwo - longtidueOne);
@@ -20,6 +20,6 @@ export function useCalculateDistance(
   return d;
 }
 
-function deg2rad(deg: number) {
+function deg2rad(deg: number): number {
   return deg * (Math.PI / 180);
 }
