@@ -1,11 +1,13 @@
 import type { NextPage } from "next";
-import Head from "next/head";
-import Image from "next/image";
-import styles from "../styles/Home.module.css";
+import { useEffect, useState } from "react";
+import { useCurrentLocation } from "../hooks/use-current-location";
 
 const Home: NextPage = () => {
+  const { currentLatitude, currentLongitude } = useCurrentLocation();
   return (
     <section>
+      <p>latitude: {currentLatitude}</p>
+      <p>longitude: {currentLongitude}</p>
       <div>
         <h1>김종찬 만두</h1>
       </div>
