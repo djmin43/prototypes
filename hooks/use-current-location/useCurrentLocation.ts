@@ -15,6 +15,10 @@ export function useCurrentLocation(): Coords {
       setCurrentLatitude(pos.coords.latitude);
       setCurrentLongitude(pos.coords.longitude);
     });
+    geoLocation.watchPosition((pos): void => {
+      setCurrentLatitude(pos.coords.latitude);
+      setCurrentLongitude(pos.coords.longitude);
+    });
   }, [currentLatitude, currentLongitude]);
 
   return {
