@@ -1,5 +1,4 @@
 import type { NextPage } from "next";
-import { useEffect, useState } from "react";
 import { useCurrentLocation, useCalculateDistance } from "../hooks";
 
 interface Coords {
@@ -25,7 +24,14 @@ const Home: NextPage = () => {
     <section>
       <p>latitude: {currentLatitude}</p>
       <p>longitude: {currentLongitude}</p>
-      <p>사무실까지: {distanceToOffice}km </p>
+      <p>
+        사무실까지:
+        {currentLatitude === 0 && currentLongitude === 0 ? (
+          <span>계산중....</span>
+        ) : (
+          <span>{distanceToOffice}km</span>
+        )}
+      </p>
     </section>
   );
 };
