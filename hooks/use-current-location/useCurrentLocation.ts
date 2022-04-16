@@ -15,11 +15,15 @@ export function useCurrentLocation(): Coords {
       setCurrentLatitude(pos.coords.latitude);
       setCurrentLongitude(pos.coords.longitude);
     });
+  }, [currentLatitude, currentLongitude]);
+
+  useEffect(() => {
+    const geoLocation: Geolocation = navigator.geolocation;
     geoLocation.watchPosition((pos): void => {
       setCurrentLatitude(pos.coords.latitude);
       setCurrentLongitude(pos.coords.longitude);
     });
-  }, [currentLatitude, currentLongitude]);
+  }, []);
 
   return {
     currentLatitude,

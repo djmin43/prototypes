@@ -7,6 +7,7 @@ interface Coords {
 }
 
 const Home: NextPage = () => {
+  console.log(this);
   const officeCoordinates: Coords = {
     latitude: 37.517464,
     longitude: 127.040718,
