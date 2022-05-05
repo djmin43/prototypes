@@ -8,7 +8,7 @@ const Home: NextPage = () => {
       <h1>these are my prototypes</h1>
       <section>
         <p>list</p>
-        {ROUTES.map((route) => (
+        {ROUTES.FIRST_LEVEL.map((route) => (
           <Link key={route.route} href={route.route}>
             <a>{route.label}</a>
           </Link>
